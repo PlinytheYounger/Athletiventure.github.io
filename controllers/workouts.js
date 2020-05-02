@@ -11,11 +11,25 @@ const Workout = require('../models/workouts.js');
 // * Edit: Shows a form to update an existing resource linked to Update Route
 //========================================================================================
 
+//----------- NEW ----------- //
+router.get('/new', (req, res) => {
+    res.render('New');
+})
+
 //----------- INDEX ----------- //
 router.get('/', (req, res) => {
     res.render('Index');
 })
 
+//----------- Edit ----------- //
+router.get('/:id/edit', (req, res) => {
+    res.render('Edit');
+})
+
+//----------- NEW ----------- //
+router.get('/:id', (req, res) => {
+    res.render('Show');
+})
 
 //========================================================================================
 // Functional Routes
