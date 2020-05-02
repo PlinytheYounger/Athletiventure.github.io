@@ -4,6 +4,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const workoutController = require('./controllers/workouts.js');
 
 // Variables
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
+app.use('/workouts', workoutController);
 
 //---------------------------------
 // CONNECT TO MONGO
