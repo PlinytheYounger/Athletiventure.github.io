@@ -20,6 +20,7 @@ router.get('/new', (req, res) => {
 router.get('/', (req, res) => {
     Workout.find({}, (error, allWorkouts) => {    
         req.body.diffculty === 'Beginner' ? req.body.points = 10 : req.body.diffculty === 'Intermediate' ? req.body.points = 20 : req.body.diffculty === 'Advanced' ? req.body.points = 30 : req.body.diffculty === 'Extreme Advanced' ? req.body.points = 50 : req.body.points = 10;
+        console.log(allWorkouts);
         res.render('Index', {workouts: allWorkouts});
     })
 })
@@ -31,7 +32,37 @@ router.get('/', (req, res) => {
 //             length: 30,
 //             bodyFocus: ['Full Body'],
 //             workoutType: ['Bodyweight'],
-//             workout: ['2 Rounds', 'Walk into Plank x 6', 'Backward Lunge / Knee Up / Knee Out X 8/8', 'Doggie Leg Through X 8 alt. sides', 'Side Step Squat Pulse x 10 alt. sides', 'Hollow Leg Lifts x 15'],
+//             workout: [
+//                 {
+//                     exercise: 'Walk into Plank',
+//                     sets: 2,
+//                     reps: 6,
+//                     rest: 0
+//                 }, 
+//                 {
+//                     exercise: 'Backward Lunge / Knee Up / Knee Out X 8/8',
+//                     sets: 2,
+//                     reps: '8 each side',
+//                     rest: 0
+//                 },
+//                 {
+//                     exercise: 'Doggie Leg Through X 8 alt. sides',
+//                     sets: 2,
+//                     reps: '8 alternating sides',
+//                     rest: 0
+//                 },
+//                 {
+//                     exercise: 'Side Step Squat Pulse',
+//                     sets: 2,
+//                     reps: '10 alternating sides',
+//                     rest: 0 
+//                 },
+//                 {
+//                     exercise: 'Hollow Leg Lifts',
+//                     sets: 2,
+//                     reps: 15,
+//                     rest: 0
+//                 }],
 //             difficulty: 'Beginner',
 //             points: 0,
 //             timesCompleted: 0,
@@ -43,7 +74,55 @@ router.get('/', (req, res) => {
 //             length: 16,
 //             bodyFocus: ['Upper Body', 'Lower Body'],
 //             workoutType: ['Cardio'],
-//             workout: ['2 rounds: 45 secs work / 15 secs rest', 'Backward Lunge / Knee Strike / Jab - L', 'Backward Lunge / Knee Strike / Jab - R', 'Plank Side Jab (each arm)', 'Squat Knee Strike (x2) / Twist Squat (x2)', 'Side Kick / Knee Strike - L', 'Side Kick / Knee Strike - R', 'Squat / Jab / Jab', 'Squat Knee Strike (x2) / Twist Squat (x2)'],
+//             workout: [
+//                 {
+//                     exercise: 'Backward Lunge / Knee Strike / Jab - L',
+//                     sets: 2,
+//                     reps: '45 secs work',
+//                     rest: '15 secs'
+//                 },
+//                 {
+//                     exercise: 'Backward Lunge / Knee Strike / Jab - R',
+//                     sets: 2,
+//                     reps: '45 secs work',
+//                     rest: '15 secs'
+//                 },
+//                 {
+//                     exercise: 'Plank Side Jab (alt arms)',
+//                     sets: 2,
+//                     reps: '45 secs work',
+//                     rest: '15 secs'
+//                 }, 
+//                 {
+//                     exercise: 'Squat Knee Strike (x2) / Twist Squat (x2)',
+//                     sets: 2,
+//                     reps: '45 secs work',
+//                     rest: '15 secs'
+//                 },
+//                 {
+//                     exercise: 'Side Kick / Knee Strike - L',
+//                     sets: 2,
+//                     reps: '45 secs work',
+//                     rest: '15 secs'
+//                  }, 
+//                  {
+//                      exercise: 'Side Kick / Knee Strike - R',
+//                      sets: 2,
+//                      reps: '45 secs work',
+//                      rest: '15 secs'
+//                  }, 
+//                  {
+//                     exercise: 'Squat / Jab / Jab',
+//                     sets: 2,
+//                     reps: '45 secs work',
+//                     rest: '15 secs'
+//                  },
+//                  {
+//                     exercise: 'Squat Knee Strike (x2) / Twist Squat (x2)',
+//                     sets: 2,
+//                     reps: '45 secs work',
+//                     rest: '15 secs'
+//                  }],
 //             difficulty: 'Beginner',
 //             points: 0,
 //             timesCompleted: 0,

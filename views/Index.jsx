@@ -4,7 +4,6 @@ const Default = require('./Default');
 class Index extends React.Component {
     render() {
         const { workouts } = this.props;
-        console.log(workouts);
         return(
             <Default>
                 <div className="mainContainer">
