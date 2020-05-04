@@ -12,7 +12,7 @@ class Default extends React.Component {
                         <h1>World of Weightloss</h1>
                         <div>
                             <div className="userDisplay">
-                                <img src="#" alt="Profile Photo"/>
+                                <img src="../images/profilePlaceholder.jpg" alt="Profile Photo"/>
                                 <div className="progressDisplay">
                                     <h3>Weekly Progress</h3>
                                     <h3>Points: [XXXXXXXXOOOOOO]</h3>

@@ -3,6 +3,8 @@ const Default = require('./Default');
 
 class Index extends React.Component {
     render() {
+        const { workouts } = this.props;
+        console.log(workouts);
         return(
             <Default>
                 <div className="mainContainer">
@@ -35,11 +37,26 @@ class Index extends React.Component {
                             <a href="#">Stretching</a>
                         </div>
                     </div>
-                    <div className="workoutsContainer">
-                        {/*use map to populate*/}
-                        <h2>Leg Burner</h2>
+                        {workouts.map((item, index) => {
+                            return (
+                                <div className="workoutsContainer">
+                                    <div className="workoutImage">
+                                        <img src="../images/stockPhoto.jpg" alt="Workout Image"/>
+                                    </div>
+                                    <div className="workoutDisplay">
+                                        <h3><a href={`/workouts/${item._id}`}>{item.title}</a></h3>
+                                        <ul>
+                                            <li>Workout Length: {item.length} minutes</li>
+                                            <li>Type: {item.workoutType.map((element) => {return (element) })}</li>
+                                            <li>Difficulty: {item.difficulty}</li>
+                                            <li>Points: {item.points}</li>
+                                            <li>Comments: {item.comments}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            )
+                        })};
                     </div>
-                </div>
             </Default>
         )
     }

@@ -3,8 +3,11 @@ const Default = require('./Default');
 
 class Show extends React.Component {
     render() {
+        const { workout } = this.props;
         return(
-            <h1>This is the show page</h1>
+            <Default>
+                <h1>{workout.title}</h1>
+            </Default>
         )
     }
 }
