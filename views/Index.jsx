@@ -6,6 +6,25 @@ class Index extends React.Component {
         const { workouts } = this.props;
         return(
             <Default>
+                <header>
+                    <h1>Workout Adventure</h1>
+                    <div>
+                        <div className="userDisplay">
+                            <img src="../images/profilePlaceholder.jpg" alt="Profile Photo"/>
+                            <div className="progressDisplay">
+                                <h4>Weekly Progress</h4>
+                                <h4>Points: 10</h4>
+                            </div>
+                        </div>
+                        <nav>
+                            <ul>
+                                <li><button id="mainPage"><a href="/workouts">Main Page</a></button></li>
+                                <li><button id="Schedule"><a href="#">Schedule</a></button></li>
+                                <li><button id="Addnew"><a href="/workouts/new">Add New</a></button></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
                 <div className="mainContainer">
                     <div className="dropdowns">
                         <button id="buttonDiffculty" className="dropbtn">Difficulty</button>
@@ -45,11 +64,11 @@ class Index extends React.Component {
                                     <div className="workoutDisplay">
                                         <h3><a href={`/workouts/${item._id}`}>{item.title}</a></h3>
                                         <ul>
-                                            <li>Workout Length: {item.length} minutes</li>
-                                            <li>Type: {item.workoutType.map((element) => {return (element) })}</li>
-                                            <li>Difficulty: {item.difficulty}</li>
-                                            <li>Points: {item.points}</li>
-                                            <li>Comments: {item.comments}</li>
+                                            <li>Workout Length:  <span>{item.length} minutes</span></li>
+                                            <li>Type:  <span>{item.workoutType.map((element) => {return (element) })}</span></li>
+                                            <li>Difficulty:  <span>{item.difficulty}</span></li>
+                                            <li>Points:  <span>{item.points}</span></li>
+                                            <li>Comments:  <span>{item.comments}</span></li>
                                         </ul>
                                     </div>
                                 </div>

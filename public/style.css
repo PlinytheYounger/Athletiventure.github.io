@@ -1,16 +1,27 @@
 /*------------ ROOT VARIABLE & GENERAL STYLING ----------- */
-* {
+/* * {
     border: 1px solid gold
-}
+} */
+
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800&display=swap');
 
 :root {
-
+    --dark-gray: #121212;
+    --lighter-gray: #404040;
+    --dark-blue: #182952;
+    --rich-blue: #2b3595;
+    --purple: #7045af;
+    --bright-pink: #e14594;
+    --bright-teal: #21e6c1;
+    --true-red: #ff0000;
 }
 
 body {
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+    background-color: var(--dark-gray);
 }
 
 li {
@@ -18,10 +29,22 @@ li {
     list-style: none;
 }
 
+h4 {
+    color: var(--gold-yellow);
+    font-weight: bold;
+}
+
+/***********************************/
 /*------------ DEFAULT ----------- */
+/************************************/
 header {
-    padding: 20px;
     text-align: center;
+    color: var(--bright-pink);
+    font-weight: 400;
+    background-color: var(--lighter-gray);
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
 }
 
 header > div {
@@ -31,14 +54,41 @@ header > div {
     align-items: center;
 }
 
+.userDisplay > img {
+    width: 20%;
+}
+
+nav > ul > li > button {
+    background-color: var(--purple);
+    padding: 10px;
+    width: 100px;
+    margin: 5px;
+}
+
 nav > ul > li > button > a {
-    color: black;
+    color: white;
     text-decoration: none;
+    font-family: 'Dosis', 'sans-serif';
+    font-size: 1.25em;
+    font-size: 600;
+}
+
+nav > ul > li > button > a:hover {
+    cursor: pointer;
+    color: var(--bright-pink);
 }
 
 footer {
     text-align: center;
     padding: 10px;
+    background-color: var(--lighter-gray);
+    margin: 2%;
+}
+
+footer > h2 > a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--bright-teal);
 }
 
 /***********************************/
@@ -51,6 +101,10 @@ footer {
     width: 20%;
 }
 
+.progressDisplay > h4{
+    width: 300px;
+}
+
 /******* DROPDOWNS ********/
 
 /* full div styling */
@@ -60,34 +114,39 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: var(--lighter-gray);
+    margin: 2%;
 }
 
 /* Dropdown button */
 .dropbtn {
-    background: lightseagreen;
+    width: 30%;
+    background: var(--bright-teal);
     color: white;
-    padding: 16px;
+    padding: 10px;
     font-size: 16px;
+    font-weight: 800;
     border: none;
     cursor: pointer;
+    font-family: 'Dosis', 'sans-serif';
 }
 
 /* Dropdown button hover & focus*/
 .dropbtn:hover, .dropbtn:focus {
-    background-color: lightpink;
+    background-color: var(--bright-pink);
 }
 
 /* Dropdown content (hidden by default - display when someone clicks button)*/
 .dropdownContent {
     display: none;
     position: absolute;
-    background-color: lightgreen;
+    background-color: var(--bright-teal);
     z-index: 1;
 }
 
 /* links inside the dropdown */
 .dropdownContent > a {
-    color: black;
+    color: white;
     padding: 5px;
     text-decoration: none;
     display: block;
@@ -112,16 +171,51 @@ footer {
 .workoutDisplay {
     width: 45%;
     margin: 2%;
+    padding-left: 2%;
+    background-color: var(--lighter-gray);
+}
+
+.workoutDisplay > h3 > a {
+    text-decoration: none;
+    color: var(--bright-teal);
+}
+
+.workoutDisplay > ul > li {
+    color: var(--bright-teal);
+    line-height: 40px;
+    font-weight: 800;
+}
+
+.workoutDisplay > h3 > a:hover {
+    cursor: pointer;
+    color: var(--bright-pink);
+}
+
+span {
+    color: white;
+    font-weight: 400;
 }
 
 /***********************************/
 /*------------ SHOW ----------- */
 /************************************/
 
+.showHeader {
+    padding: 3%;
+}
+
+.showHeader > nav > ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .workoutContainer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: var(--lighter-gray);
+    margin: 2%;
 }
 
 .exerciseImg {
@@ -130,10 +224,32 @@ footer {
 
 .exerciseImg > img {
     width: 90%;
+    margin: 5%;
 }
 
 .exerciseDisplay {
-    width: 46%
+    width: 46%;
+    padding: 5%;
+}
+
+.exerciseDisplay {
+    color: var(--bright-teal);
+}
+
+table > tr {
+    margin: 1%;
+}
+
+.changeButtons {
+    background-color: var(--lighter-gray);
+    margin: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.changeButtons > form {
+    width: 45%;
 }
 
 /***********************************/
@@ -144,3 +260,99 @@ footer {
 /***********************************/
 /*------------ CREATE ----------- */
 /************************************/
+
+.newHeader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.newHeader > nav {
+    width: 25%;
+}
+
+.newHeader > nav > ul > li {
+    color: var(--bright-teal);
+}
+
+h1 {
+    color: var(--bright-teal);
+}
+
+.progressDisplay {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    color: var(--bright-teal)
+}
+
+#createWorkout {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--lighter-gray);
+    margin: 2%;
+}
+
+.newWorkout {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.newWorkout > div {
+    width: 45%;
+}
+
+.newWorkout > div > img {
+    width: 95%;
+}
+
+input[type="text"] {
+    width: 95%;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid var(--bright-teal);
+    margin-bottom: 4%;
+    margin-top: 4%;
+}
+
+input[type="submit"] {
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    background: var(--lighter-gray);
+    box-shadow: 2px 2px var(--bright-teal);
+    font-size: 1.25em;
+    color: white;
+    transition: 0.2s ease-in-out;
+    margin-bottom: 2%;
+    margin-top: 4%;
+    font-family: 'Dosis', 'san-serif';
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background: var(--bright-teal);
+    box-shadow: 2px 2px var(--lighter-gray);
+}
+
+select {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid var(--lighter-gray);
+    font-size: 1.25em;
+    color: white;
+    background-color: var(--bright-teal);
+    font-family: 'Dosis', 'sans-serif';
+}
+
+.inputs2 > div {
+    border-bottom: 3px solid var(--bright-teal);
+}
+
+form {
+    color: white;
+}
+

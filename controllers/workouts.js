@@ -21,7 +21,11 @@ router.get('/', (req, res) => {
     Workout.find({}, (error, allWorkouts) => {    
         req.body.diffculty === 'Beginner' ? req.body.points = 10 : req.body.diffculty === 'Intermediate' ? req.body.points = 20 : req.body.diffculty === 'Advanced' ? req.body.points = 30 : req.body.diffculty === 'Extreme Advanced' ? req.body.points = 50 : req.body.points = 10;
         console.log(allWorkouts);
-        res.render('Index', {workouts: allWorkouts});
+        if (error) {
+            res.send(error)
+        } else {
+            res.render('Index', {workouts: allWorkouts});
+        }
     })
 })
 
@@ -191,13 +195,21 @@ router.get('/', (req, res) => {
 
 //----------- Edit ----------- //
 router.get('/:id/edit', (req, res) => {
-    res.render('Edit');
+    if (error) {
+        res.send(error);
+    } else {
+        res.render('Edit');
+    }
 })
 
 //----------- SHOW ----------- //
 router.get('/:id', (req, res) => {
     Workout.findById(req.params.id, (error, foundWorkout) => {
-        res.render('Show', {workout: foundWorkout})
+        if (error) {
+            res.send(error);
+        } else {
+            res.render('Show', {workout: foundWorkout})
+        }
     })
 })
 
@@ -210,9 +222,32 @@ router.get('/:id', (req, res) => {
 
 // Create
 router.post('/', (req,res) => {
-    req.body.diffculty === 'Beginner' ? req.body.points = 10 : req.body.diffculty === 'Intermediate' ? req.body.points = 20 : req.body.diffculty === 'Advanced' ? req.body.points = 30 : req.body.diffculty === 'Extreme Advanced' ? req.body.points = 50 : req.body.points = 10;
+    if (req.body.diffculty === 'Beginner') {
+        req.body.points = 10
+    } else if (req.body.diffculty === 'Intermediate') {
+        req.body.points = 20 
+    } else if (req.body.diffculty === 'Advanced') {
+        req.body.points = 30
+    } else if (req.body.diffculty === 'Extreme Advanced') {
+        req.body.points = 50
+    } else {
+        req.body.points = 10;
+    } 
     Workout.create(req.body, (error, createdWorkout) => {
+        if (error) {
+            res.send(error);
+        } else {
+            res.redirect('/')
+        }
         res.redirect('/')
+    })
+})
+
+// Destroy 
+router.delete('/:id', (req, res) => {
+    Workout.findByIdAndDelete(req.params.id, (error, deletedWorkout) => {
+        console.log('workout deleted');
+        res.redirect('/');
     })
 })
 
