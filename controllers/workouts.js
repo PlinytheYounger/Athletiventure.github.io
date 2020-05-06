@@ -28,6 +28,7 @@ router.get('/', (req, res) => {
     })
 })
 
+
 //----------- Edit ----------- //
 router.get('/:id/edit', (req, res) => {
     Workout.findById(req.params.id, (error, editWorkout) => {

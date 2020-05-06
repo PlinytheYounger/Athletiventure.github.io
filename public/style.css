@@ -1,7 +1,7 @@
 /*------------ ROOT VARIABLE & GENERAL STYLING ----------- */
-/* * {
+* {
     border: 1px solid gold
-} */
+}
 
 @import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800&display=swap');
 
@@ -30,53 +30,14 @@ li {
 }
 
 h4 {
-    color: var(--gold-yellow);
+    color: var(--bright-teal);
     font-weight: bold;
+    font-size: 1.25em;
 }
 
 /***********************************/
 /*------------ DEFAULT ----------- */
 /************************************/
-header {
-    text-align: center;
-    color: var(--bright-pink);
-    font-weight: 400;
-    background-color: var(--lighter-gray);
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 2%;
-}
-
-header > div {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.userDisplay > img {
-    width: 20%;
-}
-
-nav > ul > li > button {
-    background-color: var(--purple);
-    padding: 10px;
-    width: 100px;
-    margin: 5px;
-}
-
-nav > ul > li > button > a {
-    color: white;
-    text-decoration: none;
-    font-family: 'Dosis', 'sans-serif';
-    font-size: 1.25em;
-    font-size: 600;
-}
-
-nav > ul > li > button > a:hover {
-    cursor: pointer;
-    color: var(--bright-pink);
-}
 
 footer {
     text-align: center;
@@ -97,19 +58,57 @@ footer > h2 > a {
 
 /******* HEADER ********/
 
-.userDisplay > img {
+.indexHeader {
+    text-align: center;
+    color: var(--bright-pink);
+    font-weight: 400;
+    background-color: var(--lighter-gray);
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+}
+
+.indexHeader > nav > ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.indexHeader > nav > ul > li {
     width: 20%;
 }
 
-.progressDisplay > h4{
-    width: 300px;
+.indexHeader > nav > ul > li > button {
+    background-color: var(--bright-pink);
+    width: 100%;
+    padding: 5%;
 }
+
+.indexHeader > nav > ul > li > button > a {
+    color: white;
+    font-family: 'Dosis', 'sans-serif';
+    text-decoration: none;
+    font-size: 2em;
+}
+
+.userDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userDisplay > img {
+    width: 10%;
+}
+
+
 
 /******* DROPDOWNS ********/
 
 /* full div styling */
 .dropdowns {
-    position: relative;
     padding: 20px;
     display: flex;
     justify-content: space-around;
@@ -118,13 +117,20 @@ footer > h2 > a {
     margin: 2%;
 }
 
+.dropdownContainer {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
 /* Dropdown button */
 .dropbtn {
-    width: 30%;
+    width: 50%;
     background: var(--bright-teal);
     color: white;
     padding: 10px;
-    font-size: 16px;
+    font-size: 1.75em;
     font-weight: 800;
     border: none;
     cursor: pointer;
@@ -132,16 +138,23 @@ footer > h2 > a {
 }
 
 /* Dropdown button hover & focus*/
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:hover {
     background-color: var(--bright-pink);
 }
 
 /* Dropdown content (hidden by default - display when someone clicks button)*/
 .dropdownContent {
     display: none;
+    text-align: center;
     position: absolute;
+    width: 50%;
     background-color: var(--bright-teal);
     z-index: 1;
+    font-size: 1.75em;
+}
+
+.dropdownContent:hover {
+    background-color: var(--bright-pink);
 }
 
 /* links inside the dropdown */
@@ -160,7 +173,7 @@ footer > h2 > a {
 }
 
 .workoutImage {
-    width: 45%;
+    width: 30%;
     margin: 2%;
 }
 
@@ -169,7 +182,7 @@ footer > h2 > a {
 }
 
 .workoutDisplay {
-    width: 45%;
+    width: 50%;
     margin: 2%;
     padding-left: 2%;
     background-color: var(--lighter-gray);
@@ -178,12 +191,14 @@ footer > h2 > a {
 .workoutDisplay > h3 > a {
     text-decoration: none;
     color: var(--bright-teal);
+    font-size: 1.5em;
 }
 
 .workoutDisplay > ul > li {
     color: var(--bright-teal);
     line-height: 40px;
     font-weight: 800;
+    font-size: 1.25em;
 }
 
 .workoutDisplay > h3 > a:hover {
@@ -208,6 +223,22 @@ span {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.showHeader > nav > ul > li {
+    width: 25%;
+}
+
+.showHeader > nav > ul > li > button {
+    background-color: var(--bright-pink);
+    width: 100%;
+    padding: 5%;
+}
+
+.showHeader > nav > ul > li > button > a {
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
 }
 
 .workoutContainer {
@@ -236,8 +267,12 @@ span {
     color: var(--bright-teal);
 }
 
-table > tr {
-    margin: 1%;
+.exerciseDisplay > table {
+    width: 90%;
+}
+
+.exerciseDisplay > table > tr > th {
+    font-size: 2em;
 }
 
 .changeButtons {
@@ -356,3 +391,10 @@ form {
     color: white;
 }
 
+/***********************************/
+/*------------ MEDIA QUERIES ----- */
+/************************************/
+
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+
+}

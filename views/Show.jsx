@@ -29,7 +29,7 @@ class Show extends React.Component {
                             </tr>
                             {workout.workout.map((object, index) => {
                                 return(
-                                    <tr key={workout.exercises}>
+                                    <tr>
                                         <th>{object.exercise}</th>
                                         <th>{object.sets}</th>
                                         <th>{object.reps}</th>
