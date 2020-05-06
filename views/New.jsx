@@ -49,26 +49,26 @@ class New extends React.Component {
                                     <option>Intermediate</option>
                                     <option>Advanced</option>
                                     <option>Extreme Advanced</option>
-                            </select>
+                                </select>
                             <input type="submit" name="" value="Publish New Workout"></input>
 
                             </div>
 
                             <div className="inputs2">
-                                    <input type="text" name="workout" placeholder="Exercise 1"/>
-                                    <input type="text" name="workout" placeholder="Sets"/>
-                                    <input type="text" name="workout" placeholder="Reps"/>
-                                    <input type="text" name="workout" placeholder="Rest"/>
-                                    <div></div>
-                                    <input type="text" name="workout" placeholder="Exercise 2"/>
-                                    <input type="text" name="workout" placeholder="Sets"/>
-                                    <input type="text" name="workout" placeholder="Reps"/>
-                                    <input type="text" name="workout" placeholder="Rest"/>
-                                    <div></div>
-                                    <input type="text" name="workout" placeholder="Exercise 3"/>
-                                    <input type="text" name="workout" placeholder="Sets"/>
-                                    <input type="text" name="workout" placeholder="Reps"/>
-                                    <input type="text" name="workout" placeholder="Rest"/>
+                                <input type="text" name="exercise1Exercise" placeholder="Exercise 1"/>
+                                <input type="text" name="exercise1Sets" placeholder="Sets"/>
+                                <input type="text" name="exercise1Reps" placeholder="Reps"/>
+                                <input type="text" name="exercise1Rest" placeholder="Rest"/>
+                                <div></div>
+                                <input type="text" name="exercise2Exercise" placeholder="Exercise 1"/>
+                                <input type="text" name="exercise2Sets" placeholder="Sets"/>
+                                <input type="text" name="exercise2Reps" placeholder="Reps"/>
+                                <input type="text" name="exercise2Rest" placeholder="Rest"/>
+                                <div></div>
+                                <input type="text" name="exercise3Exercise" placeholder="Exercise 1"/>
+                                <input type="text" name="exercise3Sets" placeholder="Sets"/>
+                                <input type="text" name="exercise3Reps" placeholder="Reps"/>
+                                <input type="text" name="exercise3Rest" placeholder="Rest"/>
                             </div>
                         </div>
                     </form>

@@ -15,6 +15,7 @@ const port = 3000;
 //---------------------------------
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 app.use('/workouts', workoutController);

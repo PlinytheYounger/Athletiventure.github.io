@@ -29,7 +29,7 @@ class Show extends React.Component {
                             </tr>
                             {workout.workout.map((object, index) => {
                                 return(
-                                    <tr>
+                                    <tr key={workout.exercises}>
                                         <th>{object.exercise}</th>
                                         <th>{object.sets}</th>
                                         <th>{object.reps}</th>
@@ -40,10 +40,8 @@ class Show extends React.Component {
                     </div>
                 </div>
                 <div className="changeButtons">
-                    <form action={`/workouts/${workout._id}?_method="PUT"`} method="POST">
-                        <input type="submit" name="" value="Add a Comment"/>
-                    </form>
-                    <form action={`/workouts/${workout._id}?_method="DELETE"`} method="PUT">
+                    <button><a href={`/workouts/${workout._id}/edit`}>Add Comment</a></button>
+                    <form action={`/workouts/${workout._id}?_method=DELETE`} method="POST">
                         <input type="submit" name="" value="Delete Workout"/>
                     </form>
                 </div>
