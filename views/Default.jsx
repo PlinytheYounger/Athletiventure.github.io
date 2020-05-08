@@ -8,12 +8,12 @@ class Default extends React.Component {
                     <meta charSet="UTF-8"/>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                     <title>Athletiventure</title>
-                    <link rel="stylesheet" href="../style.css"/>
+                    <link rel="stylesheet" href="/style.css"/>
                 </head>
                 <body>
                     {this.props.children}    
                     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossOrigin="anonymous"></script>
-                    <script src="../app.js"></script>
+                    <script src="/app.js"></script>
                 </body>
                 <footer>
                     <h2><a href="#">Contact</a></h2>

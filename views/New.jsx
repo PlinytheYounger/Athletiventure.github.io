@@ -9,7 +9,7 @@ class New extends React.Component {
                     <nav>
                         <ul>
                                 <li><button id="mainPage"><a href="/workouts">Main Page</a></button></li>
-                                <li><button id="Schedule"><a href="#">Schedule</a></button></li>
+                                <li><button id="profilePage"><a href="/workouts/user">Profile Page</a></button></li>
                                 <li><button id="Addnew"><a href="/workouts/new">Add New</a></button></li>
                         </ul>
                     </nav>
@@ -34,7 +34,6 @@ class New extends React.Component {
                                     <option>Lower Body</option>
                                     <option>Upper Body</option>
                                     <option>Core</option>
-                                    <option>Conditioning</option>
                                 </select>
                                 <select name="workoutType">
                                     <option>Workout Type</option>

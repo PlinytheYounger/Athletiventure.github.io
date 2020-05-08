@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Workout = require('../models/workouts.js');
+// const User = require('../models/users.js');
 
 //========================================================================================
 // 7 RESTful Routes
@@ -20,6 +21,10 @@ router.get('/new', (req, res) => {
 router.get('/', (req, res) => {
     Workout.find({}, (error, allWorkouts) => {    
         req.body.diffculty === 'Beginner' ? req.body.points = 10 : req.body.diffculty === 'Intermediate' ? req.body.points = 20 : req.body.diffculty === 'Advanced' ? req.body.points = 30 : req.body.diffculty === 'Extreme Advanced' ? req.body.points = 50 : req.body.points = 10;
+        const {search_field, search_value} = req.query;
+
+        console.log(req.query);
+
         if (error) {
             res.send(error)
         } else {
@@ -27,6 +32,17 @@ router.get('/', (req, res) => {
         }
     })
 })
+
+//----------- USER PROFILE ----------- //
+router.get('/user', (req,res) => {
+    res.render('Profile');
+})
+
+//----------- FILTER ----------- //
+// get search_criteria from query parameter
+// build a query object with it
+// send data to the frontend
+
 
 
 //----------- Edit ----------- //
@@ -93,6 +109,7 @@ router.post('/', (req,res) => {
         },
     ]
     req.body.workout = workout;
+    console.log(req.body);
     Workout.create(req.body, (error, createdWorkout) => {
         if (error) {
             res.send(error);
@@ -104,7 +121,6 @@ router.post('/', (req,res) => {
 
 // Destroy 
 router.delete('/:id', (req, res) => {
-    console.log('in the delete route');
     Workout.findByIdAndDelete(req.params.id, (error, deletedWorkout) => {
         console.log('workout deleted');
         res.redirect('/workouts');
@@ -113,7 +129,6 @@ router.delete('/:id', (req, res) => {
 
 // Update
 router.put('/:id', (req, res) => {
-    console.log('in the update route');
     Workout.findByIdAndUpdate(req.params.id, req.body, (error, updatedWorkout) => {
         error ? console.log(error) : res.redirect('/workouts')
     })
