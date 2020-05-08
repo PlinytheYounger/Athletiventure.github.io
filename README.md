@@ -9,7 +9,7 @@ Here is a link to the live site:
 ### Landing Page
 Main workout page, where you are able to create a profile and navigate the workouts. Users are able to filter based on their fitness needs.
 
-![landing page photo](freeFit/public/images/LandingPage.png)
+![landing page photo](/public/images/LandingPage.png)
 
 ## Wireframes and Design
 
@@ -20,16 +20,16 @@ Going with this idea, a lot of the games that came to mind had dark undertones w
 For the user profile, I wanted to base it off of feeling like you are viewing a character profile in a computer game - similar to World of Warcraft (pictured below).
 
 ### Design
-![Design inspiration](freeFit/images/design.png)
+![Design inspiration](/public/images/design.png)
 
 ### Main Page Wireframe
-![main page wireframe](freeFit/public/images/Index.jsx_(monitor).png)
+![main page wireframe](/public/images/Index.jsx_(monitor).png)
 
 ### Add a new workout page wireframe
-![new page wireframe](freeFit/public/images/New.jsx.png)
+![new page wireframe](/public/images/New.jsx.png)
 
 ### Mobile Design Wireframe
-![mobile design](freeFit/public/images/Mobile_Design.png)
+![mobile design](/public/images/Mobile_Design.png)
 
 ## Development
 
