@@ -32,7 +32,18 @@ For the user profile, I wanted to base it off of feeling like you are viewing a 
 ![mobile design](/public/images/Mobile_Design.png)
 
 ## Development
+- Express.js
+- React
+- Mongo
+- Mongoose
+- Javascript
+- CSS
 
 ## Future Developments
+- Allow users to create a profile and select / create an avatar
+- Build more community functionality - allow users to favorite workouts, rate workouts, see what workouts others had completed recently
+- Build incentives for users to complete workouts and level up
+- Users are able to submit a workout as complete and earn points
+- Users are able to upload a workout versus typing everything in
 
 ## Contributors

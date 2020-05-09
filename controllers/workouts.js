@@ -4,7 +4,6 @@ const Workout = require('../models/workouts.js');
 // const User = require('../models/users.js');
 
 //========================================================================================
-// 7 RESTful Routes
 // Presentational Routes (ALL GET REQUESTS)
 // * Index: shows a list of our resources, links to New, Edit & Delete
 // * New: Show a form to create a new resource linked to Create
@@ -37,13 +36,6 @@ router.get('/', (req, res) => {
 router.get('/user', (req,res) => {
     res.render('Profile');
 })
-
-//----------- FILTER ----------- //
-// get search_criteria from query parameter
-// build a query object with it
-// send data to the frontend
-
-
 
 //----------- Edit ----------- //
 router.get('/:id/edit', (req, res) => {

@@ -3,6 +3,7 @@ const Default = require('./Default');
 
 class New extends React.Component {
     render() {
+        const array = ['1', '2', '3', '4', '5', '6'];
         return(
             <Default>
                 <header className="newHeader">
@@ -54,20 +55,16 @@ class New extends React.Component {
                             </div>
 
                             <div className="inputs2">
-                                <input type="text" name="exercise1Exercise" placeholder="Exercise 1"/>
-                                <input type="text" name="exercise1Sets" placeholder="Sets"/>
-                                <input type="text" name="exercise1Reps" placeholder="Reps"/>
-                                <input type="text" name="exercise1Rest" placeholder="Rest"/>
-                                <div></div>
-                                <input type="text" name="exercise2Exercise" placeholder="Exercise 1"/>
-                                <input type="text" name="exercise2Sets" placeholder="Sets"/>
-                                <input type="text" name="exercise2Reps" placeholder="Reps"/>
-                                <input type="text" name="exercise2Rest" placeholder="Rest"/>
-                                <div></div>
-                                <input type="text" name="exercise3Exercise" placeholder="Exercise 1"/>
-                                <input type="text" name="exercise3Sets" placeholder="Sets"/>
-                                <input type="text" name="exercise3Reps" placeholder="Reps"/>
-                                <input type="text" name="exercise3Rest" placeholder="Rest"/>
+                                {array.map((item, index) => {
+                                    return(
+                                    <>
+                                    <input type="text" name={`exercise${item}Exercise`} placeholder={`Exercise ${item}`}/>
+                                    <input type="text" name={`exercise${item}Sets`} placeholder="Sets"/>
+                                    <input type="text" name={`exercise${item}Reps`} placeholder="Reps"/>
+                                    <input type="text" name={`exercise${item}Rest`} placeholder="Rest"/>
+                                    <div></div>
+                                    </>)
+                                })}
                             </div>
                         </div>
                     </form>
